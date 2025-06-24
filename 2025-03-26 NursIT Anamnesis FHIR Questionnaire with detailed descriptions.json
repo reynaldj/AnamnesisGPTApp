@@ -1,0 +1,2287 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "AnamnesisQuestionnaire",
+    "description": "Partial mapping for FHIR compliant (QuestionnaireResponse) anamnesis questionnaire from 'Patient Form' PDF files.",
+    "type": "object",
+    "properties": {
+        "resourceType": {
+            "type": "string",
+            "const": "Questionnaire"
+        },
+        "questionnaire": {
+            "type": "string",
+            "const": "http://nursit-institute.com/Questionnaires/CareITAnamnesisSempaAkut"
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "in-progress",
+                "completed",
+                "amended",
+                "entered-in-error",
+                "stopped"
+            ]
+        },
+        "item": {
+            "type": "array",
+            "description": "Array von FHIR Items. Jedes Item muss eine der Definitionen im $defs treffen.",
+            "items": [
+                {
+                    "linkId": "NIT_SVAn_08",
+                    "type": "string",
+                    "text": "Art der Aufnahme auf die Station",
+                    "description": "Fragen Sie den Patienten oder die Patientin freundlich, wie er oder sie zu uns gekommen ist. Gab es eine geplante Aufnahme, wurde die Person verlegt oder handelt es sich um einen Notfall? Erläutern Sie ggf. den Unterschied und haken Sie nach, falls unklar.",
+                    "answer": [
+                        {
+                            "valueString": "Geplante Aufnahme (NIT_SVAn_08_01)"
+                        },
+                        {
+                            "valueString": "Verlegung (NIT_SVAn_08_02)"
+                        },
+                        {
+                            "valueString": "Notfall (NIT_SVAn_08_03)"
+                        },
+                        {
+                            "valueString": "Wiederaufnahme (NIT_SVAn_08_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_09",
+                    "type": "string",
+                    "text": "Geplantes Aufnahmedatum",
+                    "description": "Erfragen Sie, ob der Patient bzw. die Patientin einen konkreten Aufnahmetermin hatte. Falls ja, wann sollte die Aufnahme ursprünglich stattfinden? Diese Information hilft bei der Planung und Dokumentation.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_10",
+                    "type": "string",
+                    "text": "Verlegung - Details",
+                    "description": "Falls der Patient oder die Patientin verlegt wurde, klären Sie von welcher Einrichtung bzw. Abteilung die Verlegung erfolgte. Dies hilft, die bisherigen Behandlungsmaßnahmen zu verstehen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_11",
+                    "type": "string",
+                    "text": "Pat. wurde (...) aufgenommen",
+                    "description": "Fragen Sie, in welchem Zustand der Patient oder die Patientin angekommen ist: zu Fuß, sitzend im Rollstuhl oder liegend. Dies gibt Hinweise auf den aktuellen Mobilitätsstatus.",
+                    "answer": [
+                        {
+                            "valueString": "gehend (NIT_SVAn_11_01)"
+                        },
+                        {
+                            "valueString": "sitzend (NIT_SVAn_11_02)"
+                        },
+                        {
+                            "valueString": "liegend (NIT_SVAn_11_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_03",
+                    "type": "string",
+                    "text": "Anzahl der Notarzt-Besuche in den letzten 6 Monaten",
+                    "description": "Fragen Sie gezielt nach Notarztkontakten in den letzten sechs Monaten. Erinnern Sie den Patienten an mögliche Einsätze zuhause oder unterwegs, die medizinische Notfallhilfe betrafen.",
+                    "answer": [
+                        {
+                            "valueString": "Keine (NIT_SVAn_03_01)"
+                        },
+                        {
+                            "valueString": "1 - 3 (NIT_SVAn_03_02)"
+                        },
+                        {
+                            "valueString": "Mehr als 3 (NIT_SVAn_03_03)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_03_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_04",
+                    "type": "string",
+                    "text": "Nimmt PatientIn aktuell Antikoagulantien ein?",
+                    "description": "Ermitteln Sie, ob der Patient regelmäßig Medikamente einnimmt, insbesondere Blutverdünner. Lassen Sie sich idealerweise die Medikamente zeigen oder bitten Sie um einen Medikationsplan.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_04_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_04_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_04_01_01",
+                    "type": "string",
+                    "text": "Welche Antikoagulantien werden eingenommen?",
+                    "description": "Fragen Sie nach allen blutverdünnenden Medikamenten, die aktuell eingenommen werden (z. B. Marcumar, Xarelto, Eliquis, Heparin), und lassen Sie sich idealerweise den Namen oder den Medikationsplan zeigen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_02",
+                    "type": "string",
+                    "text": "PatientIn ist mobil oder bettlägerig ?",
+                    "description": "Fragen Sie, ob die Person sich selbstständig innerhalb der Wohnung bewegen kann und ob sie auch außerhalb unterwegs ist – z. B. für Spaziergänge oder Einkäufe – oder ob sie überwiegend im Bett liegt und ggf. nur mit Hilfe sitzt.",
+                    "answer": [
+                        {
+                            "valueString": "Mobil außerh. Wohnung (NIT_SVAn_02_00)"
+                        },
+                        {
+                            "valueString": "Mobil innerh. Wohnung (NIT_SVAn_02_01)"
+                        },
+                        {
+                            "valueString": "Bettlägerig / mit Hilfe sitzend (NIT_SVAn_02_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_06",
+                    "type": "string",
+                    "text": "Anzahl Stürze in den letzten 90 Tagen",
+                    "description": "Erfragen Sie Stürze in den letzten drei Monaten. Achten Sie darauf, auch beinahe-Stürze oder Situationen mit starkem Schwindel aufzunehmen. Das hilft, das Sturzrisiko einzuschätzen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_00",
+                    "type": "string",
+                    "text": "Grunderkrankung",
+                    "description": "Fragen Sie nach der zentralen chronischen oder akuten Grunderkrankung, die den aktuellen Gesundheitszustand  beeinflusst könnten, und dokumentieren Sie diese möglichst genau, z. B. Herzinsuffizienz, Demenz oder Tumorerkrankung.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_01",
+                    "type": "string",
+                    "text": "Bekannte Erkrankungen",
+                    "description": "Erfragen Sie alle relevanten Vorerkrankungen, die ärztlich diagnostiziert wurden, auch wenn sie aktuell nicht im Vordergrund stehen (z. B. Bluthochdruck, Diabetes, Osteoporose) und notieren Sie sie vollständig.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_PAV_100",
+                    "type": "string",
+                    "text": "Anzahl aktiver medizinischer Probleme bei Aufnahme, die Intervention nötig machen (gem. Auskunft Arzt) ",
+                    "description": "Erfragen oder entnehmen Sie von ärztlicher Seite, wie viele medizinische Probleme zum Aufnahmezeitpunkt vorliegen, die eine ärztliche oder pflegerische Intervention erforderlich machen (z. B. Fraktur, Infekt, Exsikkose) und ordnen Sie diese einer passenden Kategorie zu.",
+                    "answer": [
+                        {
+                            "valueString": "1 (NIT_PAV_100_01)"
+                        },
+                        {
+                            "valueString": "2 (NIT_PAV_100_02)"
+                        },
+                        {
+                            "valueString": "3 (NIT_PAV_100_03)"
+                        },
+                        {
+                            "valueString": "4 (NIT_PAV_100_04)"
+                        },
+                        {
+                            "valueString": "5 oder mehr (NIT_PAV_100_05)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_12",
+                    "type": "string",
+                    "text": "Parkinsonstatus",
+                    "description": "Fragen Sie nach dem aktuellen Parkinsonstatus der Patientin oder des Patienten, um Informationen über den Schweregrad der Erkrankung und den bisherigen Verlauf zu erhalten, die für die medizinische Betreuung und Therapieplanung wichtig sind.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_DEFAULT_NAME",
+                    "type": "string",
+                    "text": "Angehöriger Name",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_DEFAULT_PHONE",
+                    "type": "string",
+                    "text": "Angehöriger Phone",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_DEFAULT_ADDRESS",
+                    "type": "string",
+                    "text": "Angehöriger Address",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_EMERGENCY_NAME",
+                    "type": "string",
+                    "text": "Name für Notfall ",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_EMERGENCY_PHONE",
+                    "type": "string",
+                    "text": "Phone für Notfall ",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_EMERGENCY_ADDRESS",
+                    "type": "string",
+                    "text": "Address für Notfall ",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_OTHER_NAME",
+                    "type": "string",
+                    "text": "Name (2. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_OTHER_PHONE",
+                    "type": "string",
+                    "text": "Phone (2. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_OTHER_ADDRESS",
+                    "type": "string",
+                    "text": "Address (2. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_UNKNOWN_NAME",
+                    "type": "string",
+                    "text": "Name  (weitere Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_UNKNOWN_PHONE",
+                    "type": "string",
+                    "text": "Phone (weitere Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_RELATED_UNKNOWN_ADDRESS",
+                    "type": "string",
+                    "text": "Address (weitere Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_104",
+                    "type": "string",
+                    "text": "Wer hat die Angaben für diese Anamnese gemacht?",
+                    "description": ".",
+                    "answer": [
+                        {
+                            "valueString": "PatientIn selbst (NIT_SVAn_104_00)"
+                        },
+                        {
+                            "valueString": "Angehörige / Bezugsperson (NIT_SVAn_104_01)"
+                        },
+                        {
+                            "valueString": "BetreuerIn (NIT_SVAn_104_02)"
+                        },
+                        {
+                            "valueString": "Sonstige (NIT_SVAn_104_09)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_104_09_01",
+                    "type": "string",
+                    "text": "Sonstige - Details (Wer hat die Angaben für diese Anamnese gemacht?)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_103",
+                    "type": "string",
+                    "text": "Familienstand",
+                    "description": "Fragen Sie nach dem aktuellen Familienstand der Patientin oder des Patienten, da dies Hinweise auf soziale Unterstützung, Versorgung und mögliche Bezugspersonen geben kann – nutzen Sie ggf. alltagsnahe Begriffe wie „verheiratet“, „verwitwet“ oder „leben Sie mit jemandem zusammen?“.",
+                    "answer": [
+                        {
+                            "valueString": "Verheiratet (NIT_SVAn_103_01)"
+                        },
+                        {
+                            "valueString": "Geschieden (NIT_SVAn_103_02)"
+                        },
+                        {
+                            "valueString": "Getrennt lebend (NIT_SVAn_103_03)"
+                        },
+                        {
+                            "valueString": "Verwitwet (NIT_SVAn_103_04)"
+                        },
+                        {
+                            "valueString": "Alleinstehend (NIT_SVAn_103_05)"
+                        },
+                        {
+                            "valueString": "Eheähnliche Gemeinschaft (NIT_SVAn_103_06)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_113",
+                    "type": "string",
+                    "text": "Tätigkeit / Beruf",
+                    "description": "Fragen Sie nach dem aktuellen oder früheren Beruf der Patientin oder des Patienten – bei Rentner:innen nach dem letzten ausgeübten Beruf –, da dieser Rückschlüsse auf gesundheitliche Belastungen, soziale Lage oder berufliche Rehabilitationsziele geben kann.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_101",
+                    "type": "string",
+                    "text": "Mobilfunknummer PatientIn",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_102",
+                    "type": "string",
+                    "text": "Festnetznummer PatientIn",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_118",
+                    "type": "string",
+                    "text": "E-Mail-Adresse PatientIn",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_117",
+                    "type": "string",
+                    "text": "DNR / DNI (Do not Reanimate / Do not Intubate)",
+                    "description": "Fragen Sie, ob eine „Do not resuscitate“ (DNR) oder „Do not intubate“ (DNI) Anordnung für die Patientin oder den Patienten vorliegt, und notieren Sie diese, um sicherzustellen, dass die medizinische Behandlung im Einklang mit den Wünschen der Patientin oder des Patienten erfolgt.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_318",
+                    "type": "string",
+                    "text": "Dolmetscher erforderlich",
+                    "description": "Fragen Sie, ob ein Dolmetscher erforderlich ist, um eine effektive Kommunikation zwischen der Patientin oder dem Patienten und dem medizinischen Personal sicherzustellen, insbesondere wenn Sprachbarrieren bestehen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_318_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_318_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_319",
+                    "type": "string",
+                    "text": "Dolmetschersprache",
+                    "description": "Fragen Sie, welche Sprache der Dolmetscher sprechen muss, um sicherzustellen, dass eine präzise und verständliche Kommunikation zwischen der Patientin oder dem Patienten und dem medizinischen Personal gewährleistet werden kann.",
+                    "answer": [
+                        {
+                            "valueString": "Türkisch (NIT_SVAn_319_01)"
+                        },
+                        {
+                            "valueString": "Arabisch (NIT_SVAn_319_02)"
+                        },
+                        {
+                            "valueString": "Polnisch (NIT_SVAn_319_03)"
+                        },
+                        {
+                            "valueString": "Balkansprachen (NIT_SVAn_319_04)"
+                        },
+                        {
+                            "valueString": "Französisch (NIT_SVAn_319_05)"
+                        },
+                        {
+                            "valueString": "Englisch (NIT_SVAn_319_06)"
+                        },
+                        {
+                            "valueString": "Russisch (NIT_SVAn_319_07)"
+                        },
+                        {
+                            "valueString": "Sonstiges (NIT_SVAn_319_09)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_319_09_01",
+                    "type": "string",
+                    "text": "Beschreibung",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_110",
+                    "type": "string",
+                    "text": "Adresse (HausärztIn)",
+                    "description": "Notieren Sie die Adresse der Hausärztin oder des Hausarztes, um eine reibungslose Kommunikation und Überweisung von Informationen während des Krankenhausaufenthalts zu gewährleisten.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_109",
+                    "type": "string",
+                    "text": "HausärztIn (Name)",
+                    "description": "Notieren Sie den Namen der Hausärztin oder des Hausarztes, um sicherzustellen, dass alle relevanten medizinischen Informationen während des Krankenhausaufenthalts korrekt weitergegeben werden können.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_114",
+                    "type": "string",
+                    "text": "ÜberweiserIn",
+                    "description": "Fragen Sie, von wem die Patientin oder der Patient ins Krankenhaus überwiesen wurde – z. B. Hausärztin, Facharzt, Notärztin oder Pflegeheim –, und notieren Sie den Namen sowie ggf. die Einrichtung für die weitere Kommunikation.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_115",
+                    "type": "string",
+                    "text": "Krankenkasse",
+                    "description": "Erfragen Sie den Namen der Krankenkasse, bei der die Patientin oder der Patient versichert ist, um die Abrechnung und ggf. organisatorische Abläufe (z. B. Genehmigungen) korrekt zuordnen zu können.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_PAV_104",
+                    "type": "string",
+                    "text": "Alter in Jahren",
+                    "description": ".",
+                    "answer": [
+                        {
+                            "valueString": "18 - 59 (NIT_PAV_104_00)"
+                        },
+                        {
+                            "valueString": "60 - 69 (NIT_PAV_104_01)"
+                        },
+                        {
+                            "valueString": "70 - 79 (NIT_PAV_104_02)"
+                        },
+                        {
+                            "valueString": "80 - 89 (NIT_PAV_104_03)"
+                        },
+                        {
+                            "valueString": "90 - 99 (NIT_PAV_104_04)"
+                        },
+                        {
+                            "valueString": "Über 99 (NIT_PAV_104_05)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_105",
+                    "type": "string",
+                    "text": "Auskunft an",
+                    "description": "Klären Sie mit der Patientin oder dem Patienten, wem medizinische Informationen mitgeteilt werden dürfen – z. B. Angehörigen, gesetzlichen Betreuer:innen oder dem Pflegepersonal im Heim – und dokumentieren Sie die Zustimmung oder Ablehnung eindeutig.",
+                    "answer": [
+                        {
+                            "valueString": "Angehörige / Bezugsperson (NIT_SVAn_105_00)"
+                        },
+                        {
+                            "valueString": "Betreuer (NIT_SVAn_105_01)"
+                        },
+                        {
+                            "valueString": "Med.personal (NIT_SVAn_105_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_106",
+                    "type": "string",
+                    "text": "Auskunftssperre an",
+                    "description": "Fragen Sie, ob es Personen gibt, denen ausdrücklich keine Informationen über den Gesundheitszustand oder Aufenthalt gegeben werden dürfen, und notieren Sie deren Namen für eine klare Auskunftssperre.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_200",
+                    "type": "string",
+                    "text": "Name (1. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_201",
+                    "type": "string",
+                    "text": "Verwandschafts-/ Beziehungsverhältnis (1. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_202",
+                    "type": "string",
+                    "text": "Adresse (1. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_203",
+                    "type": "string",
+                    "text": "Telefon (1. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_204",
+                    "type": "string",
+                    "text": "Darf Kontakt 1 24 H angerufen werden?",
+                    "description": ".",
+                    "answer": [
+                        {
+                            "valueString": "Ja (NIT_SVAn_204_00)"
+                        },
+                        {
+                            "valueString": "Nein (NIT_SVAn_204_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_205",
+                    "type": "string",
+                    "text": "Name (2. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_206",
+                    "type": "string",
+                    "text": "Verwandschafts-/ Beziehungsverhältnis (2. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_207",
+                    "type": "string",
+                    "text": "Adresse (2. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_208",
+                    "type": "string",
+                    "text": "Telefon (2. Kontaktperson)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_209",
+                    "type": "string",
+                    "text": "Darf Kontakt 2 24 H angerufen werden?",
+                    "description": ".",
+                    "answer": [
+                        {
+                            "valueString": "Ja (NIT_SVAn_209_00)"
+                        },
+                        {
+                            "valueString": "Nein (NIT_SVAn_209_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_PAV_101",
+                    "type": "string",
+                    "text": "Lebt PatientIn mit jemandem im gleichen Haushalt, der zu Hause (auch nach der Entlassung) helfen kann?",
+                    "description": "Fragen Sie, ob im selben Haushalt eine Person lebt, die im Alltag unterstützt – z. B. beim Einkaufen, der Körperpflege oder Medikamentengabe – und ob diese Hilfe auch nach der Entlassung verfügbar ist.",
+                    "answer": [
+                        {
+                            "valueString": "Ja (NIT_PAV_101_00)"
+                        },
+                        {
+                            "valueString": "Nein (NIT_PAV_101_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_PAV_102",
+                    "type": "string",
+                    "text": "Ist PatientIn zu Hause in allen Bereichen selbstständig?",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient alle alltäglichen Aktivitäten zu Hause ohne Hilfe bewältigen kann – z. B. Körperpflege, Anziehen, Essen, Haushalt – oder ob in bestimmten Bereichen Unterstützung nötig ist.",
+                    "answer": [
+                        {
+                            "valueString": "Ja (NIT_PAV_102_00)"
+                        },
+                        {
+                            "valueString": "Nein (NIT_PAV_102_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_PAV_103",
+                    "type": "string",
+                    "text": "In welchen Bereichen hat PatientIn in der letzten 2 Wochen vor der Aufnahme Hilfe benötigt?",
+                    "description": ".",
+                    "answer": [
+                        {
+                            "valueString": "Körperpflege (NIT_PAV_103_01)"
+                        },
+                        {
+                            "valueString": "An- und Auskleiden (NIT_PAV_103_02)"
+                        },
+                        {
+                            "valueString": "Ausscheidung (NIT_PAV_103_03)"
+                        },
+                        {
+                            "valueString": "Baden und Duschen (NIT_PAV_103_04)"
+                        },
+                        {
+                            "valueString": "Essen und Trinken (NIT_PAV_103_05)"
+                        },
+                        {
+                            "valueString": "Gehen (NIT_PAV_103_06)"
+                        },
+                        {
+                            "valueString": "Transfer Bett / Stuhl (NIT_PAV_103_07)"
+                        },
+                        {
+                            "valueString": "Ortswechsel (Auto / Tram) (NIT_PAV_103_08)"
+                        },
+                        {
+                            "valueString": "Einkaufen (NIT_PAV_103_09)"
+                        },
+                        {
+                            "valueString": "Kochen (NIT_PAV_103_10)"
+                        },
+                        {
+                            "valueString": "Hausarbeit (NIT_PAV_103_11)"
+                        },
+                        {
+                            "valueString": "Medikamenteneinnahme (NIT_PAV_103_12)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1200",
+                    "type": "string",
+                    "text": "Welche Etage lebt die Patientin ",
+                    "description": "Fragen Sie, in welcher Etage sich die Wohnung oder das Zimmer der Patientin bzw. des Patienten befindet, um mögliche Barrieren wie Treppen oder eingeschränkten Zugang (z. B. ohne Aufzug) einschätzen zu können.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1201",
+                    "type": "string",
+                    "text": "Aufzug vorhanden",
+                    "description": "Erfragen Sie, ob im Wohngebäude ein Aufzug vorhanden ist, um die Erreichbarkeit der Wohnung nach der Entlassung und ggf. notwendige Mobilitätshilfen besser planen zu können.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_1201_01)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_1201_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_304",
+                    "type": "string",
+                    "text": "Gesetzliche Vertreter",
+                    "description": "Fragen Sie, ob eine gesetzliche Vertretung besteht (z. B. Betreuung durch eine:n Betreuer:in), und klären Sie, ob diese Person Entscheidungen im medizinischen oder organisatorischen Bereich treffen darf.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_304_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_304_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_305",
+                    "type": "string",
+                    "text": "Name (Gesetzliche Vertreter)",
+                    "description": "Notieren Sie den Namen der gesetzlichen Vertreterin oder des gesetzlichen Vertreters, um die Kontaktaufnahme und Kommunikation in rechtlichen Angelegenheiten während des Krankenhausaufenthalts sicherzustellen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_306",
+                    "type": "string",
+                    "text": "Telefon (Gesetzliche Vertreter)",
+                    "description": "Notieren Sie die Telefonnummer der gesetzlichen Vertreterin oder des gesetzlichen Vertreters, um eine direkte Kontaktaufnahme bei rechtlichen oder medizinischen Angelegenheiten während des Krankenhausaufenthalts zu ermöglichen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_307",
+                    "type": "string",
+                    "text": "Mobilfunk (Gesetzliche Vertreter)",
+                    "description": "Notieren Sie die Mobilfunknummer der gesetzlichen Vertreterin oder des gesetzlichen Vertreters, um im Falle von dringenden Angelegenheiten oder schnellen Rückfragen eine direkte Erreichbarkeit zu gewährleisten.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_308",
+                    "type": "string",
+                    "text": "E-Mail Adresse (Gesetzliche Vertreter)",
+                    "description": "Notieren Sie die E-Mail-Adresse der gesetzlichen Vertreterin oder des gesetzlichen Vertreters, um eine schriftliche Kommunikation bezüglich medizinischer oder administrativer Angelegenheiten während des Krankenhausaufenthalts zu ermöglichen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_309",
+                    "type": "string",
+                    "text": "Zuständigkeitsbereiche (Gesetzliche Vertreter)",
+                    "description": "Falls ein gesetzlicher Vertreter oder eine gesetzliche Vertreterin benannt ist, fragen Sie gezielt nach den konkreten Zuständigkeitsbereichen – z. B. Heilbehandlung, Vermögenssorge oder Aufenthaltsbestimmung – um rechtssichere Entscheidungen im Klinikalltag zu ermöglichen.",
+                    "answer": [
+                        {
+                            "valueString": "Für alle Angelegenheiten (NIT_SVAn_309_00)"
+                        },
+                        {
+                            "valueString": "Aufenthaltsbestimmung / Wohnungsangelegenheiten (NIT_SVAn_309_01)"
+                        },
+                        {
+                            "valueString": "Heilbehandlung (NIT_SVAn_309_02)"
+                        },
+                        {
+                            "valueString": "Post- und Telefonkontrolle (NIT_SVAn_309_03)"
+                        },
+                        {
+                            "valueString": "Vermögenssorge (NIT_SVAn_309_04)"
+                        },
+                        {
+                            "valueString": "Zwangsbehandlung (NIT_SVAn_309_05)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_108",
+                    "type": "string",
+                    "text": "Vorsorgevollmacht (Gesetzliche Vertreter)",
+                    "description": "Fragen Sie, ob eine Vorsorgevollmacht besteht, ob sie vorliegt und wer darin bevollmächtigt ist – dies ist wichtig für den Fall, dass die Patientin oder der Patient nicht mehr einwilligungsfähig ist und Entscheidungen getroffen werden müssen.",
+                    "answer": [
+                        {
+                            "valueString": "Existiert nicht (NIT_SVAn_108_00)"
+                        },
+                        {
+                            "valueString": "Existiert und liegt vor (NIT_SVAn_108_01)"
+                        },
+                        {
+                            "valueString": "Existiert aber liegt nicht vor (NIT_SVAn_108_02)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_108_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_108_09_01",
+                    "type": "string",
+                    "text": "Vorsorgevollmacht - Details (Gesetzliche Vertreter)",
+                    "description": "Notieren Sie hier Details zur bestehenden Vorsorgevollmacht, insbesondere Name und Kontaktdaten der bevollmächtigten Person sowie den Umfang der Vollmacht (z. B. Gesundheitssorge, Vermögensangelegenheiten).",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1202",
+                    "type": "string",
+                    "text": "Art der Bevollmächtigung (Gesetzliche Vertreter)",
+                    "description": "Fragen Sie, für welche Lebensbereiche die bevollmächtigte Person zuständig ist – z. B. Aufenthaltsbestimmung, finanzielle Angelegenheiten oder Gesundheitsentscheidungen – und dokumentieren Sie die Angaben entsprechend zur rechtlichen Absicherung.",
+                    "answer": [
+                        {
+                            "valueString": "Aufenthalt (NIT_SVAn_1202_01)"
+                        },
+                        {
+                            "valueString": "Finanzen (NIT_SVAn_1202_02)"
+                        },
+                        {
+                            "valueString": "Gesundheit (NIT_SVAn_1202_03)"
+                        },
+                        {
+                            "valueString": "Ergänzende Anmerkungen (NIT_SVAn_1202_99)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1202_99_01",
+                    "type": "string",
+                    "text": "Beschreibung \"Ergänzende Anmerkungen\"",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_107",
+                    "type": "string",
+                    "text": "Patientenverfügung",
+                    "description": "Fragen Sie, ob eine Patientenverfügung existiert, ob sie vorliegt und ob darin konkrete medizinische Wünsche für den Fall einer fehlenden Einwilligungsfähigkeit festgehalten sind – diese Information ist für Therapieentscheidungen in kritischen Situationen essenziell.",
+                    "answer": [
+                        {
+                            "valueString": "Existiert nicht (NIT_SVAn_107_00)"
+                        },
+                        {
+                            "valueString": "Existiert nicht"
+                        },
+                        {
+                            "valueString": "jedoch vorgeschlagen (NIT_SVAn_107_01)"
+                        },
+                        {
+                            "valueString": "Existiert und liegt vor (NIT_SVAn_107_02)"
+                        },
+                        {
+                            "valueString": "Existiert aber liegt nicht vor (NIT_SVAn_107_03)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_107_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_107_09_01",
+                    "type": "string",
+                    "text": "Patientenverfügung - Details",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_302",
+                    "type": "string",
+                    "text": "Pflegegrad ist beantragt (OPS 9-984.b)",
+                    "description": "Fragen Sie, ob bereits ein Pflegegrad beantragt wurde – unabhängig davon, ob er schon bewilligt ist –, da dies für die Entlassungsplanung und die Beantragung weiterer Hilfen relevant sein kann.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_302_08)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_302_09)"
+                        },
+                        {
+                            "valueString": "Nicht bekannt (NIT_SVAn_302_10)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_300",
+                    "type": "string",
+                    "text": "Pflegegrad gemäß §15 SGB XI (Pflegeversicherung)",
+                    "description": "Fragen Sie, ob ein Pflegegrad nach §15 SGB XI vorliegt, und wenn ja, welchen – dies ist für die Einschätzung des Hilfebedarfs, die Versorgungsplanung sowie für Abrechnungs- und Dokumentationszwecke wichtig.",
+                    "answer": [
+                        {
+                            "valueString": "Nicht bekannt (NIT_SVAn_300_08)"
+                        },
+                        {
+                            "valueString": "1 (OPS 9-984.6) (NIT_SVAn_300_01)"
+                        },
+                        {
+                            "valueString": "2 (OPS 9-984.7) (NIT_SVAn_300_02)"
+                        },
+                        {
+                            "valueString": "3 (OPS 9-984.8) (NIT_SVAn_300_03)"
+                        },
+                        {
+                            "valueString": "4 (OPS 9-984.9) (NIT_SVAn_300_04)"
+                        },
+                        {
+                            "valueString": "5 (OPS 9-984.a) (NIT_SVAn_300_05)"
+                        },
+                        {
+                            "valueString": "kein Pflegegrad (NIT_SVAn_300_00)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_301",
+                    "type": "string",
+                    "text": "Pflegegrad seit ...",
+                    "description": "Fragen Sie, seit wann der aktuelle Pflegegrad besteht, um den zeitlichen Verlauf des Pflegebedarfs einschätzen zu können – idealerweise mit Monat und Jahr.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_303",
+                    "type": "string",
+                    "text": "Erhöhung Pflegegrad bewilligt ab",
+                    "description": "Fragen Sie, ob eine Erhöhung des Pflegegrads bereits bewilligt wurde und ab wann diese gilt – diese Information ist wichtig für die Planung von Pflegeleistungen und Entlassungsmanagement.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_310",
+                    "type": "string",
+                    "text": "Bisherige Versorgungsform",
+                    "description": "Fragen Sie, wie die Versorgung der Patientin oder des Patienten vor der aktuellen Krankenhausaufnahme organisiert war – z. B. selbstständig, mit Unterstützung durch Angehörige oder Pflegedienst, im Heim – und ob es dabei bereits erkennbare Versorgungslücken gab.",
+                    "answer": [
+                        {
+                            "valueString": "Selbstständig (NIT_SVAn_310_00)"
+                        },
+                        {
+                            "valueString": "Angehörige (NIT_SVAn_310_01)"
+                        },
+                        {
+                            "valueString": "Krankenhaus (NIT_SVAn_310_02)"
+                        },
+                        {
+                            "valueString": "Pflegedienst (NIT_SVAn_310_03)"
+                        },
+                        {
+                            "valueString": "Alten- / Pflegeheim (NIT_SVAn_310_04)"
+                        },
+                        {
+                            "valueString": "24h- Betreuung (NIT_SVAn_310_05)"
+                        },
+                        {
+                            "valueString": "bestehendes Versorgungsdefizit / Handlungsbedarf (NIT_SVAn_310_07)"
+                        },
+                        {
+                            "valueString": "Sonstiges (NIT_SVAn_310_06)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_311",
+                    "type": "string",
+                    "text": "Name und Telefonnummer (falls Pflegeheim)",
+                    "description": "Notieren Sie den Namen und die Telefonnummer der Einrichtung, falls die Patientin oder der Patient in einem Alten- oder Pflegeheim lebt, um eine reibungslose Kommunikation und spätere Rückmeldung sicherzustellen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_312",
+                    "type": "string",
+                    "text": "Institution und Telefonnummer (falls Pflegeheim)",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_320",
+                    "type": "string",
+                    "text": "Wie oft kommt der Pflegedienst am Tag? ",
+                    "description": "Fragen Sie, wie häufig der ambulante Pflegedienst den Patienten oder die Patientin zu Hause täglich versorgt, um den Umfang der bisherigen Hilfeleistung und den Unterstützungsbedarf nach der Entlassung besser einschätzen zu können.",
+                    "answer": [
+                        {
+                            "valueString": "1x (NIT_SVAn_320_01)"
+                        },
+                        {
+                            "valueString": "2x (NIT_SVAn_320_02)"
+                        },
+                        {
+                            "valueString": "3x (NIT_SVAn_320_03)"
+                        },
+                        {
+                            "valueString": "mehr als 3x (NIT_SVAn_320_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_321",
+                    "type": "string",
+                    "text": "An welchen Tagen der Woche kommt der Pflegedienst?",
+                    "description": "Erfragen Sie, an welchen Wochentagen der Pflegedienst ins Haus kommt – ob täglich oder nur an bestimmten Tagen –, um den zeitlichen Umfang der Versorgung und mögliche Versorgungslücken zu erkennen.",
+                    "answer": [
+                        {
+                            "valueString": "täglich (NIT_SVAn_321_01)"
+                        },
+                        {
+                            "valueString": "Montag (NIT_SVAn_321_02)"
+                        },
+                        {
+                            "valueString": "Dienstag (NIT_SVAn_321_03)"
+                        },
+                        {
+                            "valueString": "Mittwoch (NIT_SVAn_321_04)"
+                        },
+                        {
+                            "valueString": "Donnerstag (NIT_SVAn_321_05)"
+                        },
+                        {
+                            "valueString": "Freitag (NIT_SVAn_321_06)"
+                        },
+                        {
+                            "valueString": "Samstag (NIT_SVAn_321_07)"
+                        },
+                        {
+                            "valueString": "Sonntag (NIT_SVAn_321_08)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_317",
+                    "type": "string",
+                    "text": "Gleichgeschlechtliche Pflege erwünscht",
+                    "description": "Fragen Sie sensibel, ob die Patientin oder der Patient Wert darauf legt, ausschließlich von Pflegepersonen gleichen Geschlechts versorgt zu werden – diese Information ist wichtig zur Wahrung von Intimsphäre und individuellen Bedürfnissen.",
+                    "answer": [
+                        {
+                            "valueString": "n.b. (NIT_SVAn_317_00)"
+                        },
+                        {
+                            "valueString": "Nein (NIT_SVAn_317_01)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_317_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_317_01_01",
+                    "type": "string",
+                    "text": "Begründung warum Gleichgeschlechtliche Pflege erwünscht",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_400",
+                    "type": "string",
+                    "text": "Isolationspflege?",
+                    "description": "Klären Sie, ob aktuell eine Isolationspflege erforderlich ist – z. B. aufgrund einer Infektionskrankheit wie MRSA, Norovirus oder Covid-19 –, da dies besondere Schutzmaßnahmen und räumliche Vorkehrungen erfordert.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_400_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_400_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_401",
+                    "type": "string",
+                    "text": "Infektionskrankheiten",
+                    "description": "Fragen Sie, ob aktuell bekannte Infektionskrankheiten vorliegen – z. B. Hepatitis, HIV, MRSA, Norovirus oder Covid-19 –, um Schutzmaßnahmen für Mitpatient:innen und Personal frühzeitig einleiten zu können.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_401_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_401_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_402",
+                    "type": "string",
+                    "text": "Infektionskrankheiten - Details",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_403",
+                    "type": "string",
+                    "text": "Andere Erkrankung",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_404",
+                    "type": "string",
+                    "text": "Sind Sie gegen Covid -19 geimpft (Impfstatus)?",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient gegen Covid-19 geimpft ist, um den Impfstatus zu erfassen – diese Information ist wichtig für das Infektionsmanagement und die Einordnung des Risikoprofils.",
+                    "answer": [
+                        {
+                            "valueString": "Ja (NIT_SVAn_404_01)"
+                        },
+                        {
+                            "valueString": "Nein (NIT_SVAn_404_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_405",
+                    "type": "string",
+                    "text": "Anzahl (Von COVID-19)",
+                    "description": "Fragen Sie, wie viele Covid-19-Impfungen die Patientin oder der Patient bisher erhalten hat, um den vollständigen Impfstatus und ggf. die Notwendigkeit einer Auffrischung einschätzen zu können.",
+                    "answer": [
+                        {
+                            "valueString": "1. Impfung (NIT_SVAn_405_01)"
+                        },
+                        {
+                            "valueString": "2. Impfung (NIT_SVAn_405_02)"
+                        },
+                        {
+                            "valueString": "3. Impfung (NIT_SVAn_405_03)"
+                        },
+                        {
+                            "valueString": "4. Impfung (NIT_SVAn_405_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_406",
+                    "type": "string",
+                    "text": "Datum der letzten „Impfung\" (Von COVID-19)",
+                    "description": "Fragen Sie nach dem Datum der letzten Covid-19-Impfung und notieren Sie es möglichst genau (Tag, Monat, Jahr), um die Aktualität des Impfschutzes beurteilen zu können.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_407",
+                    "type": "string",
+                    "text": "Sind Sie genesen? (Von COVID-19)",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient bereits eine Covid-19-Infektion durchgemacht hat, da dies für die Einschätzung des Immunstatus und möglicher Spätfolgen relevant sein kann.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_407_01)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_407_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_408",
+                    "type": "string",
+                    "text": "Wann waren Sie krank? (Von COVID-19)",
+                    "description": "Fragen Sie nach dem Zeitraum der durchgemachten Covid-19-Erkrankung und notieren Sie das Datum oder den ungefähren Zeitraum, um den Genesenenstatus und mögliche Spätfolgen einschätzen zu können.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_500",
+                    "type": "string",
+                    "text": "Art Religion ",
+                    "description": "Fragen Sie nach der Religionszugehörigkeit der Patientin oder des Patienten, da dies Einfluss auf Wünsche zu Ernährung, Pflege, Seelsorge oder medizinischen Maßnahmen haben kann – bei Unsicherheit einfach offen nachfragen, ob religiöse Aspekte berücksichtigt werden sollen.",
+                    "answer": [
+                        {
+                            "valueString": "Römisch-katholisch (NIT_SVAn_500_11)"
+                        },
+                        {
+                            "valueString": "Evangelisch (NIT_SVAn_500_01)"
+                        },
+                        {
+                            "valueString": "Orthodox (NIT_SVAn_500_10)"
+                        },
+                        {
+                            "valueString": "Jüdisch (NIT_SVAn_500_06)"
+                        },
+                        {
+                            "valueString": "Muslimisch (NIT_SVAn_500_08)"
+                        },
+                        {
+                            "valueString": "Keine (NIT_SVAn_500_19)"
+                        },
+                        {
+                            "valueString": "andere (NIT_SVAn_500_16)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_502",
+                    "type": "string",
+                    "text": "Andere Religion",
+                    "description": "Wenn die Patientin oder der Patient eine andere als die gängigen Religionszugehörigkeiten angibt, erfassen Sie die konkrete Bezeichnung hier – dies hilft, individuelle spirituelle Bedürfnisse zu respektieren und bei Bedarf passende seelsorgerische Angebote zu machen.",
+                    "answer": [
+                        {
+                            "valueString": "Altkatholisch (NIT_SVAn_502_01)"
+                        },
+                        {
+                            "valueString": "Baptistisch (NIT_SVAn_502_02)"
+                        },
+                        {
+                            "valueString": "Evangelisch-freikirchlich (NIT_SVAn_502_03)"
+                        },
+                        {
+                            "valueString": "Hinduistisch (NIT_SVAn_502_04)"
+                        },
+                        {
+                            "valueString": "Evangelisch-methodistisch (NIT_SVAn_502_05)"
+                        },
+                        {
+                            "valueString": "Mormonisch (NIT_SVAn_502_06)"
+                        },
+                        {
+                            "valueString": "Neuapostolisch (NIT_SVAn_502_07)"
+                        },
+                        {
+                            "valueString": "Ohne Angaben (NIT_SVAn_502_08)"
+                        },
+                        {
+                            "valueString": "Ohne Bekenntnis (NIT_SVAn_502_09)"
+                        },
+                        {
+                            "valueString": "Unbekannt (NIT_SVAn_502_10)"
+                        },
+                        {
+                            "valueString": "Verschiedene (NIT_SVAn_502_11)"
+                        },
+                        {
+                            "valueString": "Zeugen Jehovas (NIT_SVAn_502_12)"
+                        },
+                        {
+                            "valueString": "Yezidisch (NIT_SVAn_502_13)"
+                        },
+                        {
+                            "valueString": "Sonstige (NIT_SVAn_502_14)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_500_16_01",
+                    "type": "string",
+                    "text": "Beschreibung Religion",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_501",
+                    "type": "string",
+                    "text": "Seelsorge erwünscht",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient während des Krankenhausaufenthalts seelsorgerische Begleitung wünscht – dies kann unabhängig von der Religionszugehörigkeit hilfreich für die psychische und emotionale Unterstützung sein.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_501_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_501_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_619",
+                    "type": "string",
+                    "text": "Rollstuhlpflichtig",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient dauerhaft auf einen Rollstuhl angewiesen ist, um den Mobilitätsstatus korrekt einzuschätzen und entsprechende Hilfsmittel oder Zimmerausstattung einplanen zu können.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_619_01)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_619_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_608",
+                    "type": "string",
+                    "text": "Rollstuhl",
+                    "description": "Klären Sie, ob ein eigener Rollstuhl vorhanden ist, ob dieser aktuell fehlt oder nicht benötigt wird – dies ist wichtig für die Mobilitätsplanung und ggf. eine kurzfristige Bereitstellung im Krankenhaus.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_608_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_608_02)"
+                        },
+                        {
+                            "valueString": "Fehlt (NIT_SVAn_608_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_608_02_01",
+                    "type": "string",
+                    "text": "Rollstuhl - Details",
+                    "description": "Erfassen Sie zusätzliche Angaben zum Rollstuhl, z. B. ob es sich um ein Standard- oder Elektro-Modell handelt, ob Anpassungen vorhanden sind (z. B. spezielle Sitzkissen) oder ob Reparaturbedarf besteh",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_600",
+                    "type": "string",
+                    "text": "Zahnprothese oben",
+                    "description": "Fragen Sie, ob eine obere Zahnprothese vorhanden ist, fehlt oder nicht benötigt wird – diese Information ist wichtig für die Mundpflege, Ernährung und ggf. den Umgang bei Operationen oder Narkosen",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_600_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_600_02)"
+                        },
+                        {
+                            "valueString": "Fehlt (NIT_SVAn_600_03)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_600_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_600_02_01",
+                    "type": "string",
+                    "text": "Zahnprothese oben - Details",
+                    "description": "Erfassen Sie genauere Angaben zur oberen Zahnprothese, z. B. ob sie locker sitzt, regelmäßig getragen wird oder derzeit beschädigt ist – das hilft bei der Einschätzung der Essfähigkeit und Mundpflege.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_601",
+                    "type": "string",
+                    "text": "Zahnprothese unten",
+                    "description": "Fragen Sie, ob eine untere Zahnprothese vorhanden ist, fehlt oder nicht benötigt wird – dies ist relevant für die Ernährung, Kommunikation und das Tragen der Prothese während des Aufenthalts.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_601_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_601_02)"
+                        },
+                        {
+                            "valueString": "Fehlt (NIT_SVAn_601_03)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_601_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_601_02_01",
+                    "type": "string",
+                    "text": "Zahnprothese unten - Details",
+                    "description": "Erfassen Sie genauere Angaben zur unteren Zahnprothese, z. B. ob sie locker sitzt, regelmäßig getragen wird oder derzeit beschädigt ist – das hilft bei der Einschätzung der Essfähigkeit und Mundpflege.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_602",
+                    "type": "string",
+                    "text": "Brille",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient eine Brille nutzt, ob sie aktuell dabei ist oder fehlt – da Sehhilfen im Klinikalltag wichtig für Orientierung, Kommunikation und Selbstständigkeit sind.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_602_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_602_02)"
+                        },
+                        {
+                            "valueString": "Fehlt (NIT_SVAn_602_03)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_602_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_602_02_01",
+                    "type": "string",
+                    "text": "Brille - Details",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_603",
+                    "type": "string",
+                    "text": "Hörgerät links",
+                    "description": "Fragen Sie, ob ein Hörgerät für das linke Ohr vorhanden ist, fehlt oder nicht benötigt wird – Hörhilfen sind essenziell für die Verständigung im Krankenhaus und sollten möglichst verfügbar sein.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_603_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_603_02)"
+                        },
+                        {
+                            "valueString": "Fehlt (NIT_SVAn_603_03)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_603_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_603_02_01",
+                    "type": "string",
+                    "text": "Hörgerät links - Details",
+                    "description": "Notieren Sie zusätzliche Informationen zum linken Hörgerät, z. B. Gerätetyp, Tragedauer, Funktionstüchtigkeit oder ob Ersatzbatterien vorhanden sind – das erleichtert die Handhabung im Klinikalltag.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_604",
+                    "type": "string",
+                    "text": "Hörgerät rechts",
+                    "description": "Fragen Sie, ob ein Hörgerät für das rechten Ohr vorhanden ist, fehlt oder nicht benötigt wird – Hörhilfen sind essenziell für die Verständigung im Krankenhaus und sollten möglichst verfügbar sein.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_604_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_604_02)"
+                        },
+                        {
+                            "valueString": "Fehlt (NIT_SVAn_604_03)"
+                        },
+                        {
+                            "valueString": "n.b. (NIT_SVAn_604_04)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_604_02_01",
+                    "type": "string",
+                    "text": "Hörgerät rechts - Details",
+                    "description": "Notieren Sie zusätzliche Informationen zum rechten Hörgerät, z. B. Gerätetyp, Tragedauer, Funktionstüchtigkeit oder ob Ersatzbatterien vorhanden sind – das erleichtert die Handhabung im Klinikalltag.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_617",
+                    "type": "string",
+                    "text": "Einsatz \"Spezialmatratze\" (Wechseldruck etc.)",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient zu Hause oder im Heim eine Spezialmatratze nutzt – z. B. eine Wechseldruckmatratze zur Dekubitusprophylaxe –, um den bisherigen Pflegebedarf und Risiken besser einschätzen zu können.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_617_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_617_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_618",
+                    "type": "string",
+                    "text": "Typ (Spezialmatratze)",
+                    "description": "Notieren Sie den Typ der verwendeten Spezialmatratze, z. B. Wechseldruckmatratze oder Antidekubitusmatratze, um den spezifischen Pflegebedarf und den Schutzeffekt bei Dekubitusrisiko zu dokumentieren.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_605",
+                    "type": "string",
+                    "text": "Sonstige Heil- und Hilfsmittel",
+                    "description": "Fragen Sie, ob zusätzlich Heil- oder Hilfsmittel (z. B. Orthesen, Rollatoren, Inhalationsgeräte) verwendet werden, um den täglichen Bedarf der Patientin oder des Patienten zu unterstützen und den Pflegeaufwand zu optimieren.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_605_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_605_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_606",
+                    "type": "string",
+                    "text": "Gehstöcke",
+                    "description": "Fragen Sie, ob Gehhilfen wie Gehstöcke vorhanden sind, fehlen oder nicht benötigt werden, da diese Informationen für die Einschätzung der Mobilität und mögliche Anpassungen der Pflegeplanung wichtig sind.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_606_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_606_02)"
+                        },
+                        {
+                            "valueString": "Fehlt (NIT_SVAn_606_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_606_02_01",
+                    "type": "string",
+                    "text": "Gehstöcke - Details",
+                    "description": "Notieren Sie spezifische Details zu den Gehstöcken, z. B. Typ, Anzahl, Zustand oder ob besondere Anpassungen erforderlich sind, um die Mobilität der Patientin oder des Patienten zu unterstützen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_607",
+                    "type": "string",
+                    "text": "Rollator",
+                    "description": "Fragen Sie, ob ein Rollator vorhanden ist, fehlt oder nicht benötigt wird, um den Grad der Mobilität und mögliche Unterstützungsbedürfnisse der Patientin oder des Patienten zu ermitteln.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_607_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_607_02)"
+                        },
+                        {
+                            "valueString": "Fehlen (NIT_SVAn_607_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_607_02_01",
+                    "type": "string",
+                    "text": "Rollator - Details",
+                    "description": "Notieren Sie spezifische Details zum Rollator, z. B. Typ, Zustand, Anpassungen oder zusätzliche Funktionen (z. B. Sitzfläche, Bremsen), um den Bedarf an Hilfsmitteln während des Aufenthalts besser einschätzen zu können.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_609",
+                    "type": "string",
+                    "text": "Kontaktlinsen",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient Kontaktlinsen verwendet, ob sie derzeit vorhanden sind oder fehlen, um die Sehfähigkeit und den Bedarf an Sehhilfen während des Aufenthalts zu berücksichtigen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_609_01)"
+                        },
+                        {
+                            "valueString": "Vorhanden (NIT_SVAn_609_02)"
+                        },
+                        {
+                            "valueString": "Fehlt (NIT_SVAn_609_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_609_02_01",
+                    "type": "string",
+                    "text": "Kontaktlinsen - Details",
+                    "description": "Notieren Sie spezifische Details zu den Kontaktlinsen, z. B. Typ (tägliche oder wiederverwendbare Linsen), Pflegehinweise oder ob Ersatzlinsen benötigt werden, um die Bedürfnisse der Patientin oder des Patienten zu berücksichtigen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_610",
+                    "type": "string",
+                    "text": "Sonstige Hilfsmittel",
+                    "description": "Fragen Sie, ob zusätzliche Hilfsmittel (z. B. Inhalationsgeräte, Orthesen, Prothesen) verwendet werden, um den Pflegebedarf und die Unterstützungsmöglichkeiten besser einschätzen zu können.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_610_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_610_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_611",
+                    "type": "string",
+                    "text": "Perücke",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient eine Perücke trägt, um das persönliche Wohlbefinden und die Pflegebedürfnisse, insbesondere bei Haarverlust durch medizinische Behandlungen, zu berücksichtigen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_611_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_611_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_612",
+                    "type": "string",
+                    "text": "Defibrillator",
+                    "description": "Fragen Sie, ob der Patient einen implantierten Defibrillator hat, um wichtige medizinische Informationen für die Behandlung und das Notfallmanagement zu erfassen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_612_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_612_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_613",
+                    "type": "string",
+                    "text": "Herzschrittmacher",
+                    "description": "Fragen Sie, ob der Patient einen Herzschrittmacher trägt, um relevante medizinische Informationen zu sammeln, die für die Behandlungsplanung und mögliche Komplikationen während des Aufenthalts wichtig sind.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_613_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_613_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_614",
+                    "type": "string",
+                    "text": "Port (z.B. für Katheder) ",
+                    "description": "Fragen Sie, ob der Patient einen Port (z. B. für Chemotherapie oder Infusionen) hat, um sicherzustellen, dass dieser korrekt behandelt und gegebenenfalls während des Krankenhausaufenthalts berücksichtigt wird.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_614_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_614_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_615",
+                    "type": "string",
+                    "text": "Andere Hilfsmittel / Implantate",
+                    "description": "Fragen Sie, ob der Patient weitere Hilfsmittel oder Implantate (z. B. Prothesen, künstliche Gelenke, Stents) verwendet, und notieren Sie diese Details, um die Pflege und medizinische Versorgung optimal abzustimmen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAnI_1100",
+                    "type": "string",
+                    "text": "Allergien",
+                    "description": "Fragen Sie nach allen bekannten Allergien (z. B. gegen Medikamente, Nahrungsmittel, Insektenstiche, Umweltfaktoren), um potenzielle Risiken für die Patientin oder den Patienten während des Krankenhausaufenthalts zu vermeiden und entsprechende Vorsichtsmaßnahmen zu treffen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_701",
+                    "type": "string",
+                    "text": "Alkoholkonsum",
+                    "description": "Fragen Sie nach dem Alkoholkonsum der Patientin oder des Patienten, ob dieser gelegentlich oder regelmäßig stattfindet, um mögliche Risiken für die Behandlung, Medikation und postoperative Heilung zu erkennen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_701_00)"
+                        },
+                        {
+                            "valueString": "Gelegentlich (NIT_SVAn_701_01)"
+                        },
+                        {
+                            "valueString": "Regelmäßig (NIT_SVAn_701_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_701_02_01",
+                    "type": "string",
+                    "text": "Alkoholkonsum - Details",
+                    "description": "Notieren Sie genauere Informationen zum Alkoholkonsum, z. B. Häufigkeit, Menge und Art des konsumierten Alkohols, um potenzielle Auswirkungen auf die Behandlung und Medikation besser einschätzen zu können",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_702",
+                    "type": "string",
+                    "text": "Nikotinkonsum",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient raucht, um den Nikotinkonsum zu erfassen, da dieser Auswirkungen auf die Heilung, das Risiko für Komplikationen und die medikamentöse Behandlung haben kann.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_702_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_702_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_702_01_01",
+                    "type": "string",
+                    "text": "Nikotinkonsum - Details",
+                    "description": "Notieren Sie spezifische Details zum Nikotinkonsum, wie die Menge (z. B. Zigaretten pro Tag), Dauer des Konsums und ob es sich um Rauchen oder andere Formen des Nikotinkonsums handelt, um die Auswirkungen auf die Gesundheit und Behandlung besser zu verstehen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_703",
+                    "type": "string",
+                    "text": "Sonstiges",
+                    "description": "Erfassen Sie alle weiteren relevanten Informationen, die bisher nicht abgefragt wurden, aber für die Behandlung und Pflege der Patientin oder des Patienten wichtig sein könnten.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_800",
+                    "type": "string",
+                    "text": "Körpergröße in cm",
+                    "description": "Fragen Sie nach der Körpergröße der Patientin oder des Patienten in Zentimetern, um diese Information für die medizinische Dokumentation und zur Berechnung von Dosierungen (z. B. für Medikamente) zu erfassen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_801",
+                    "type": "string",
+                    "text": "Körpergewicht in kg",
+                    "description": "Fragen Sie nach dem aktuellen Körpergewicht der Patientin oder des Patienten in Kilogramm, um diese Information für die medizinische Dokumentation sowie für die Berechnung von Medikamentendosierungen und Ernährungsbedürfnissen zu erfassen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_802",
+                    "type": "string",
+                    "text": "BMI-Wert",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_804",
+                    "type": "string",
+                    "text": "Gewichtsverlust in den letzten 3 Monaten",
+                    "description": "Fragen Sie, ob in den letzten drei Monaten ein Gewichtsverlust stattgefunden hat, und wenn ja, wie viel, um mögliche Ernährungsprobleme oder gesundheitliche Risiken zu erkennen, die für die Behandlung und Pflegeplanung relevant sein könnten.",
+                    "answer": [
+                        {
+                            "valueString": "Kein Gewichtsverlust (NIT_SVAn_804_00)"
+                        },
+                        {
+                            "valueString": "Gewichtsverlust zwischen 1 und 3 kg (NIT_SVAn_804_01)"
+                        },
+                        {
+                            "valueString": "Gewichtsverlust > 3 kg (NIT_SVAn_804_02)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_804_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_803",
+                    "type": "string",
+                    "text": "Hat PatientIn während der letzten 3 Monate wegen Appetitverlust, Verdauungsproblemen, Schwierigkeiten beim Kauen oder Schlucken weniger gegessen?",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient in den letzten drei Monaten aufgrund von Appetitverlust, Verdauungsproblemen oder Schwierigkeiten beim Kauen oder Schlucken weniger gegessen hat, um mögliche Mangelernährung oder andere gesundheitliche Risiken zu identifizieren.",
+                    "answer": [
+                        {
+                            "valueString": "Keine Abnahme der Nahrungsaufnahme (NIT_SVAn_803_00)"
+                        },
+                        {
+                            "valueString": "Leichte Abnahme der Nahrungsaufnahme (NIT_SVAn_803_01)"
+                        },
+                        {
+                            "valueString": "Starke Abnahme der Nahrungsaufnahme (NIT_SVAn_803_02)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_803_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_813",
+                    "type": "string",
+                    "text": "Liegt eine schwere Erkrankung vor?",
+                    "description": "Fragen Sie, ob eine schwere Erkrankung vorliegt, die den aktuellen Gesundheitszustand der Patientin oder des Patienten maßgeblich beeinflusst, um potenzielle Komplikationen und spezifische Pflegeanforderungen zu erkennen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_813_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_813_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_805",
+                    "type": "string",
+                    "text": "Ernährungsform",
+                    "description": "Fragen Sie nach der Ernährungsform der Patientin oder des Patienten, um festzustellen, ob spezielle Diäten oder Nahrungsrestriktionen vorliegen – dies hilft bei der Planung der Mahlzeiten und der Ernährung während des Krankenhausaufenthalts.",
+                    "answer": [
+                        {
+                            "valueString": "Vollkost (NIT_SVAn_805_01)"
+                        },
+                        {
+                            "valueString": "Ohne Schweinefleisch (NIT_SVAn_805_02)"
+                        },
+                        {
+                            "valueString": "Vegetarisch (NIT_SVAn_805_03)"
+                        },
+                        {
+                            "valueString": "Vegan (NIT_SVAn_805_04)"
+                        },
+                        {
+                            "valueString": "Diät (NIT_SVAn_805_05)"
+                        },
+                        {
+                            "valueString": "Diabeteskost (NIT_SVAn_805_06)"
+                        },
+                        {
+                            "valueString": "Lactosefrei (NIT_SVAn_805_07)"
+                        },
+                        {
+                            "valueString": "Glutenfrei (NIT_SVAn_805_08)"
+                        },
+                        {
+                            "valueString": "Eiweißreduzierte Kost (NIT_SVAn_805_09)"
+                        },
+                        {
+                            "valueString": "Aufbaukost (NIT_SVAn_805_10)"
+                        },
+                        {
+                            "valueString": "Ballaststoffarme Kost (NIT_SVAn_805_11)"
+                        },
+                        {
+                            "valueString": "Stomakost (NIT_SVAn_805_12)"
+                        },
+                        {
+                            "valueString": "Sonstiges (NIT_SVAn_805_99)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_805_99_01",
+                    "type": "string",
+                    "text": "Ernährungsform - Details - Sonstiges",
+                    "description": ".",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_808",
+                    "type": "string",
+                    "text": "Kostform (Konsistenz)",
+                    "description": "Fragen Sie nach der bevorzugten oder verordneten Kostform der Patientin oder des Patienten, um sicherzustellen, dass die Nahrungsaufnahme entsprechend der individuellen Bedürfnisse und gegebenenfalls nach ärztlicher Anordnung angepasst wird (z. B. bei Schluckbeschwerden oder Verdauungsproblemen).",
+                    "answer": [
+                        {
+                            "valueString": "Normal (NIT_SVAn_808_01)"
+                        },
+                        {
+                            "valueString": "Flüssige Kost (NIT_SVAn_808_02)"
+                        },
+                        {
+                            "valueString": "Breikost (NIT_SVAn_808_03)"
+                        },
+                        {
+                            "valueString": "Passierte Kost (NIT_SVAn_808_04)"
+                        },
+                        {
+                            "valueString": "Weiche Kost (NIT_SVAn_808_05)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_806",
+                    "type": "string",
+                    "text": "Bekannter Diabetes Mellitus",
+                    "description": "Fragen Sie, ob bei der Patientin oder dem Patienten ein bekannter Diabetes mellitus vorliegt, um den Blutzuckerspiegel und die entsprechende medizinische Betreuung und Ernährung während des Krankenhausaufenthalts zu berücksichtigen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_806_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_806_01)"
+                        },
+                        {
+                            "valueString": "N.b. (NIT_SVAn_806_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_807",
+                    "type": "string",
+                    "text": "Art der Behandlung des  Diabetes Mellitus",
+                    "description": "Fragen Sie nach der Art der Behandlung des Diabetes mellitus, z. B. ob dieser durch Diät, orale Antidiabetika oder Insulin therapiert wird, um die notwendige Pflege und Blutzuckerkontrollen im Krankenhaus entsprechend anzupassen.",
+                    "answer": [
+                        {
+                            "valueString": "Diät (NIT_SVAn_807_01)"
+                        },
+                        {
+                            "valueString": "Orale AD (NIT_SVAn_807_02)"
+                        },
+                        {
+                            "valueString": "Insulinpflichtig (NIT_SVAn_807_03)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1100",
+                    "type": "string",
+                    "text": "Zuleitungen",
+                    "description": "Fragen Sie nach allen Zuleitungen (z. B. Katheter, Infusionen, Drainagen), die der Patientin oder dem Patienten aktuell zugeführt werden, um sicherzustellen, dass diese während des Krankenhausaufenthalts korrekt verwaltet und überwacht werden.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1101",
+                    "type": "string",
+                    "text": "Ableitungen",
+                    "description": "Fragen Sie nach allen Ableitungen (z. B. Urinbeutel, Wunddrainagen, Blasenkatheter), die der Patientin oder dem Patienten derzeit verwendet, um die ordnungsgemäße Handhabung und Pflege während des Aufenthalts sicherzustellen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_900",
+                    "type": "string",
+                    "text": "Akute Krankheit oder psychischer Stress während der  letzten 3 Monate?",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient in den letzten drei Monaten an einer akuten Krankheit oder psychischem Stress gelitten hat, um potenzielle Auswirkungen auf den aktuellen Gesundheitszustand und die Behandlung zu erkennen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_900_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_900_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_900_01_01",
+                    "type": "string",
+                    "text": "Welche akute oder psychische Krankheit lag / liegt  vor?",
+                    "description": "Erfragen Sie die spezifische akute oder psychische Krankheit, die in den letzten drei Monaten vorlag oder aktuell besteht, um die Auswirkungen auf den Gesundheitszustand und die Behandlungsmöglichkeiten besser einschätzen zu können.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_901",
+                    "type": "string",
+                    "text": "Verfügt PatientIn über Ressourcen, mit der aktuellen Lebenssituation umzugehen?",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient über die notwendigen physischen, psychischen oder sozialen Ressourcen verfügt, um mit der aktuellen Lebenssituation und den damit verbundenen Herausforderungen umzugehen, um die Unterstützung und Pflege entsprechend zu planen.",
+                    "answer": [
+                        {
+                            "valueString": "Ja (NIT_SVAn_901_00)"
+                        },
+                        {
+                            "valueString": "Nein (NIT_SVAn_901_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_901_00_01",
+                    "type": "string",
+                    "text": "Beschreibung",
+                    "description": "Erfassen Sie eine detaillierte Beschreibung der Ressourcen, die der Patientin oder dem Patienten helfen, mit der aktuellen Lebenssituation umzugehen, z. B. Unterstützung durch Familie, soziale Netzwerke, persönliche Stärken oder Bewältigungsstrategien.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_902",
+                    "type": "string",
+                    "text": "Sind besondere Schlafgewohnheiten vorhanden?",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient besondere Schlafgewohnheiten hat, z. B. Schlafpositionen oder nächtliche Routinen, um eine angenehme und gesunde Schlafumgebung während des Krankenhausaufenthalts sicherzustellen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_902_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_902_00_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_903",
+                    "type": "string",
+                    "text": "Hat PatientIn neuro-psychologische Probleme?",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient neuro-psychologische Probleme wie Demenz oder Depressionen hat, um den Pflegebedarf und die Betreuung während des Krankenhausaufenthalts entsprechend anzupassen.",
+                    "answer": [
+                        {
+                            "valueString": "Keine psychologischen Probleme (NIT_SVAn_903_00)"
+                        },
+                        {
+                            "valueString": "Leichte Demenz (NIT_SVAn_903_01)"
+                        },
+                        {
+                            "valueString": "Schwere Demenz oder Depression (NIT_SVAn_903_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1003",
+                    "type": "string",
+                    "text": "Letzter Stuhlgang vor Aufnahme",
+                    "description": "Fragen Sie nach dem letzten Stuhlgang der Patientin oder des Patienten vor der Aufnahme ins Krankenhaus, um die Verdauungsgesundheit zu beurteilen und mögliche Probleme wie Verstopfung oder Durchfall frühzeitig zu erkennen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1001",
+                    "type": "string",
+                    "text": "Zusätzliche Bemerkungen zum letzten Stuhlgang",
+                    "description": "Notieren Sie alle relevanten Details zum letzten Stuhlgang der Patientin oder des Patienten, wie z. B. Häufigkeit, Konsistenz, Farbe oder begleitende Beschwerden (z. B. Schmerzen, Blutung), um Verdauungsprobleme besser einordnen zu können.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1000",
+                    "type": "string",
+                    "text": "Hautzustand",
+                    "description": "Fragen Sie nach dem Hautzustand der Patientin oder des Patienten, um Anzeichen von Hautirritationen, Trockenheit oder Schäden frühzeitig zu erkennen. Notieren Sie alle relevanten Symptome wie Juckreiz, trockene Haut oder nicht intakte Hautstellen.",
+                    "answer": [
+                        {
+                            "valueString": "Intakt (NIT_SVAn_1000_01)"
+                        },
+                        {
+                            "valueString": "Juckreiz (NIT_SVAn_1000_02)"
+                        },
+                        {
+                            "valueString": "Trocken (NIT_SVAn_1000_03)"
+                        },
+                        {
+                            "valueString": "Papierhaut (NIT_SVAn_1000_04)"
+                        },
+                        {
+                            "valueString": "Nicht intakt - siehe Grafixxeinträge- (NIT_SVAn_1000_05)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1007",
+                    "type": "string",
+                    "text": "Hautveränderung",
+                    "description": "Fragen Sie nach allen Hautveränderungen, die der Patientin oder dem Patienten aufgefallen sind, wie z. B. Rötungen, Schwellungen, Ausschläge oder Wunden, und notieren Sie diese, um mögliche Hautprobleme frühzeitig zu identifizieren und entsprechend zu behandeln.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_05",
+                    "type": "string",
+                    "text": "Dialyse",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient derzeit eine Dialysebehandlung erhält, um den medizinischen Hintergrund zu verstehen und sicherzustellen, dass alle notwendigen Maßnahmen und Vorsichtsmaßnahmen für die Behandlung während des Krankenhausaufenthalts berücksichtigt werden.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_05_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_05_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_05_01_01",
+                    "type": "string",
+                    "text": "Dialyse Beschreibung",
+                    "description": "Notieren Sie Details zur Dialysebehandlung, z. B. Art der Dialyse (hämodialytisch oder peritoneal), Häufigkeit der Behandlungen und etwaige Komplikationen oder besondere Anforderungen, die für die Pflege während des Aufenthalts berücksichtigt werden müssen.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1002",
+                    "type": "string",
+                    "text": "Alle Gruppen des SeMPA auf \"ohne Einschränkungen\" setzen?",
+                    "description": ".",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_1002_00)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_1002_01)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006",
+                    "type": "string",
+                    "text": "Wertgegenständeerfassung",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient während des Aufenthalts Wertgegenstände wie Bargeld, EC-Karten, Kreditkarten, Mobiltelefon oder Schmuck mitgebracht hat, und erfassen Sie diese, um sicherzustellen, dass sie während des Aufenthalts sicher aufbewahrt werden können.",
+                    "answer": [
+                        {
+                            "valueString": "Bargeld (NIT_SVAn_1006_01)"
+                        },
+                        {
+                            "valueString": "EC-Karte (NIT_SVAn_1006_02)"
+                        },
+                        {
+                            "valueString": "Kreditkarte (NIT_SVAn_1006_03)"
+                        },
+                        {
+                            "valueString": "Mobiltelefon (NIT_SVAn_1006_04)"
+                        },
+                        {
+                            "valueString": "Tablet-PC (NIT_SVAn_1006_05)"
+                        },
+                        {
+                            "valueString": "Notebook / Laptop (NIT_SVAn_1006_06)"
+                        },
+                        {
+                            "valueString": "Armbanduhr (NIT_SVAn_1006_07)"
+                        },
+                        {
+                            "valueString": "Taschenuhr (NIT_SVAn_1006_08)"
+                        },
+                        {
+                            "valueString": "Schmuck (NIT_SVAn_1006_09)"
+                        },
+                        {
+                            "valueString": "Sonstiges (NIT_SVAn_1006_99)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_01_01",
+                    "type": "string",
+                    "text": "Beschreibung Bargeld ",
+                    "description": "Notieren Sie den Betrag an Bargeld, den die Patientin oder der Patient mitgebracht hat, um sicherzustellen, dass dieser korrekt erfasst und bei Bedarf sicher verwahrt wird.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_02_01",
+                    "type": "string",
+                    "text": "Beschreibung EC-Karte",
+                    "description": "Notieren Sie die Details zur EC-Karte, z. B. die Bank und Kartennummer (sofern notwendig), um sicherzustellen, dass die Karte ordnungsgemäß verwaltet und bei Bedarf sicher aufbewahrt wird.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_03_01",
+                    "type": "string",
+                    "text": "Beschreibung Kreditkarte",
+                    "description": "Notieren Sie die Details zur Kreditkarte, z. B. die Bank und Kartennummer (sofern notwendig), um sicherzustellen, dass die Karte ordnungsgemäß verwaltet und bei Bedarf sicher aufbewahrt wird.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_04_01",
+                    "type": "string",
+                    "text": "Beschreibung Mobiltelefon",
+                    "description": "Notieren Sie Details zum Mobiltelefon, wie das Modell, die Marke und gegebenenfalls die Telefonnummer, um sicherzustellen, dass das Gerät korrekt erfasst und bei Bedarf sicher aufbewahrt wird.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_05_01",
+                    "type": "string",
+                    "text": "Beschreibung Tablet-PC",
+                    "description": "Notieren Sie Details zum Tablet-PC, wie Modell, Marke und gegebenenfalls Seriennummer, um sicherzustellen, dass das Gerät korrekt erfasst und bei Bedarf sicher aufbewahrt wird.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_06_01",
+                    "type": "string",
+                    "text": "Beschreibung Notebook / Laptop",
+                    "description": "Notieren Sie Details zum Notebook oder Laptop, wie Modell, Marke und gegebenenfalls die Seriennummer, um sicherzustellen, dass das Gerät korrekt erfasst und bei Bedarf sicher aufbewahrt wird.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_07_01",
+                    "type": "string",
+                    "text": "Beschreibung Armbanduhr",
+                    "description": "Notieren Sie Details zur Armbanduhr, wie Marke, Modell und etwaige besondere Merkmale, um sicherzustellen, dass die Uhr korrekt erfasst und bei Bedarf sicher aufbewahrt wird.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_08_01",
+                    "type": "string",
+                    "text": "Beschreibung Taschenuhr",
+                    "description": "Notieren Sie Details zur Taschenuhr, wie Marke, Modell und besondere Merkmale, um sicherzustellen, dass die Uhr korrekt erfasst und bei Bedarf sicher aufbewahrt wird.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_09_01",
+                    "type": "string",
+                    "text": "Beschreibung Schmuck",
+                    "description": "Notieren Sie Details zum Schmuck, wie Art, Marke und spezifische Merkmale (z. B. Ringe, Halsketten), um sicherzustellen, dass diese Wertgegenstände korrekt erfasst und bei Bedarf sicher aufbewahrt werden.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1006_99_01",
+                    "type": "string",
+                    "text": "Beschreibung Sonstiges",
+                    "description": "Notieren Sie alle weiteren Wertgegenstände, die nicht in den vorherigen Kategorien erfasst wurden, und beschreiben Sie diese so genau wie möglich, um eine vollständige und sichere Aufbewahrung zu gewährleisten.",
+                    "answer": [],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1005",
+                    "type": "string",
+                    "text": "Wurde Patient über den angeratenen Umgang mit Wertgegenständen sowie über versicherungstechnische Gegebenheiten informiert?",
+                    "description": "Fragen Sie, ob die Patientin oder der Patient über den sicheren Umgang mit Wertgegenständen und die versicherungstechnischen Regelungen im Krankenhaus informiert wurde, um sicherzustellen, dass diese Information verstanden wurde und entsprechend gehandhabt wird.",
+                    "answer": [
+                        {
+                            "valueString": "Ja (NIT_SVAn_1005_01)"
+                        },
+                        {
+                            "valueString": "Nein (NIT_SVAn_1005_02)"
+                        }
+                    ],
+                    "item": []
+                },
+                {
+                    "linkId": "NIT_SVAn_1004",
+                    "type": "string",
+                    "text": "Entlassmanagement",
+                    "description": "Fragen Sie, ob bereits ein Entlassmanagement für die Patientin oder den Patienten geplant oder eingeleitet wurde, um die Vorbereitung auf die Entlassung und die Nachsorge sicherzustellen.",
+                    "answer": [
+                        {
+                            "valueString": "Nein (NIT_SVAn_1004_01)"
+                        },
+                        {
+                            "valueString": "Ja (NIT_SVAn_1004_02)"
+                        },
+                        {
+                            "valueString": "nicht erfasst (NIT_SVAn_1004_03)"
+                        }
+                    ],
+                    "item": []
+                }
+            ]
+        }
+    }
+}

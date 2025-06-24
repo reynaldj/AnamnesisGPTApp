@@ -1,0 +1,50 @@
+Question,Answer
+Art der Aufnahme auf die Station,Notfall (NIT_SVAn_08_03)
+Pat. wurde (...) aufgenommen,liegend (NIT_SVAn_11_03)
+Anzahl der Notarzt-Besuche in den letzten 6 Monaten,Keine (NIT_SVAn_03_01)
+Nimmt PatientIn aktuell Antikoagulantien ein?,Ja (NIT_SVAn_04_01)
+PatientIn ist mobil oder bettlägerig ?,Mobil außerh. Wohnung (NIT_SVAn_02_00)
+Anzahl Stürze in den letzten 90 Tagen,1 - 3 (NIT_SVAn_03_02)
+"Anzahl aktiver medizinischer Probleme bei Aufnahme, die Intervention nötig machen (gem. Auskunft Arzt) ",2 (NIT_PAV_100_02)
+Familienstand,Verwitwet (NIT_SVAn_103_04)
+Mobilfunknummer PatientIn,Ja (NIT_PAV_101_00)
+Festnetznummer PatientIn,Ja (NIT_PAV_102_00)
+NIT_SVAn_103_12,Medikamenteneinnahme (NIT_PAV_103_12)
+Aufzug vorhanden,Ja (NIT_SVAn_1201_02)
+Bisherige Versorgungsform,Alten- / Pflegeheim (NIT_SVAn_310_04)
+Wer hat die Angaben für diese Anamnese gemacht?,PatientIn selbst (NIT_SVAn_104_00)
+Mobilfunknummer PatientIn,0157 8583 2210
+HausärztIn (Name),Christine Pfanner
+ÜberweiserIn,Notarzt
+Krankenkasse,AOK
+Name (1. Kontaktperson),Martha Kingston
+Verwandschafts-/ Beziehungsverhältnis (1. Kontaktperson),Tochter
+Adresse (1. Kontaktperson),"Waldweg 5, 13741 Berlin"
+Telefon (1. Kontaktperson),0177 2354857
+Darf Kontakt 1 24 H angerufen werden?,Ja (NIT_SVAn_204_00)
+Auskunft an,Angehörige / Bezugsperson (NIT_SVAn_105_00)
+Auskunftssperre an,Nein (NIT_SVAn_204_01)
+Bisherige Versorgungsform,Alten- / Pflegeheim (NIT_SVAn_310_04)
+Adresse (HausärztIn),Langenspittelstift in Pankow
+Art Religion ,Römisch-katholisch (NIT_SVAn_500_11)
+Seelsorge erwünscht,Nein (NIT_SVAn_501_00)
+Zahnprothese oben,Nein (NIT_SVAn_600_01)
+Zahnprothese unten,Nein (NIT_SVAn_601_01)
+Brille,Vorhanden (NIT_SVAn_602_02)
+Hörgerät links,Nein (NIT_SVAn_603_01)
+Hörgerät rechts,Nein (NIT_SVAn_604_01)
+Alkoholkonsum,Gelegentlich (NIT_SVAn_701_01)
+Nikotinkonsum,Nein (NIT_SVAn_702_00)
+"Hat PatientIn während der letzten 3 Monate wegen Appetitverlust, Verdauungsproblemen, Schwierigkeiten beim Kauen oder Schlucken weniger gegessen?",Keine Abnahme der Nahrungsaufnahme (NIT_SVAn_803_00)
+Gewichtsverlust in den letzten 3 Monaten,Kein Gewichtsverlust (NIT_SVAn_804_00)
+Ernährungsform,Vollkost (NIT_SVAn_805_01)
+Kostform (Konsistenz),Normal (NIT_SVAn_808_01)
+Bekannter Diabetes Mellitus,Nein (NIT_SVAn_806_00)
+Hautzustand,Trocken (NIT_SVAn_1000_03)
+Sind Sie gegen Covid -19 geimpft (Impfstatus)?,Nein (NIT_SVAn_404_02)
+Sind Sie genesen? (Von COVID-19),Ja (NIT_SVAn_407_02)
+Wurde Patient über den angeratenen Umgang mit Wertgegenständen sowie über versicherungstechnische Gegebenheiten informiert?,Ja (NIT_SVAn_1005_01)
+Wertgegenständeerfassung,Ja (NIT_SVAn_605_01)
+Beschreibung Bargeld ,50 Euro
+Beschreibung EC-Karte,Berliner Sparkasse
+Beschreibung Mobiltelefon,Nokia 3210
